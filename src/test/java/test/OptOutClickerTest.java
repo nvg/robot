@@ -8,13 +8,15 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class RobotTest {
+class OptOutClickerTest {
 
-	private EpamAddressScrapingRobot robot;
+	private MacOptOutClickerRobot robot;
 
 	@BeforeEach
 	void init() {
-		robot = new EpamAddressScrapingRobot();
+		robot = new MacOptOutClickerRobot();
+		robot.setUser("MAA3");
+		robot.setPass("test123");
 	}
 
 	@Test

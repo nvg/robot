@@ -35,6 +35,14 @@ public abstract class BaseRobot {
 		this.driver = driver;
 	}
 
+	protected WebElement findElementById(String id) {
+		return getDriver().findElement(By.id(id));
+	}
+	
+	protected WebElement findElementByXpath(String xpath) {
+		return getDriver().findElement(By.xpath(xpath));
+	}
+	
 	protected WebElement findElementByXpathContainingText(String xpath, String text) {
 		WebElement result = null;
 		for (WebElement e : getDriver().findElements(By.xpath(xpath))) {
@@ -75,6 +83,14 @@ public abstract class BaseRobot {
 
 	public void close() throws IOException {
 		getDriver().quit();
+	}
+	
+	public void sleep(int sec) {
+		try {
+			Thread.sleep(sec * 1000);
+		} catch (InterruptedException e) {
+			throw new RuntimeException("Interrupted from sleep", e);
+		}
 	}
 
 	/**

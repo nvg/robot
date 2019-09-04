@@ -1,0 +1,4 @@
+test\ScrapingModel.class
+test\EpamAddressScrapingRobot.class
+test\BaseRobot.class
+test\MacOptOutClickerRobot.class
